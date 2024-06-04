@@ -4,7 +4,7 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Default from '../../layouts/default.astro';
 
 import { Image } from 'astro:assets';
-import pinImg from '../../public/icons/pin.svg';
+import pinImg from '../../../public/icons/pin.svg';
 
 const posts = (await getCollection('study-notes')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
