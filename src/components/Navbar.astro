@@ -1,5 +1,6 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import searchImg from '../../public/icons/search.svg';
 ---
 
 
@@ -17,6 +18,6 @@ import HeaderLink from './HeaderLink.astro';
 	</ul>
 	<div class="search-bar center-flex">
 		<input type="text" placeholder="Search" class="search-input">
-		<button> <img src="/icons/search.svg" class="search-icon" alt="search icon" /> </button>
+		<button> <img src={searchImg.src} class="search-icon" alt="search icon" /> </button>
 	</div>
 </nav>
