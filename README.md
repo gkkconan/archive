@@ -34,7 +34,7 @@ Features:
 ```
 
 
-## Other commands
+## All other commands
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |

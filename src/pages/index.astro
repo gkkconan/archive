@@ -8,7 +8,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SUBJECTS } from '../consts';
 import './src/styles/main.css';
 
 const today = new Date();
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('study-notes')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---

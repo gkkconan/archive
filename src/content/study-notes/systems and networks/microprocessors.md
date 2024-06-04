@@ -1,6 +1,6 @@
 ---
-title: 'Francesco Petrarca'
-description: 'Francesco Petrarca summary'
+title: 'Microprocessors'
+description: 'Microprocessors summary'
 pubDate: 'Jan 08 2022'
 author: 'gkkconan'
 category: 'study-notes'

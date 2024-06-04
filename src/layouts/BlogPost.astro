@@ -9,7 +9,7 @@ import '/src/styles/main.css';
 import '/src/styles/page.css';
 import '/src/styles/md-styles.css';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'study-notes'>['data'];
 const { title, description, pubDate, updatedDate, author, subject, tags } = Astro.props;
 ---
 
@@ -26,10 +26,10 @@ const { title, description, pubDate, updatedDate, author, subject, tags } = Astr
 			<div class="info">
 				<FormattedDate date={pubDate} />
 				{updatedDate && (<span> Last updated on <FormattedDate date={updatedDate} /> </span>)}
-				- <a href={'/author/' + author}> {author} </a>
+				- <a href={`/author/${author}`}> {author} </a>
 			</div>
 			<div class="tags">
-				{tags?.map((data) => <a class="tag" href={'/tag/' + {data}}>#{data}</a>)}
+				{tags?.map((data) => <a class="tag" href={`/tag/${data}`}>#{data}</a>)}
 			</div>
 		</header>
 
