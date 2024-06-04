@@ -45,7 +45,6 @@ main{width: 75%; flex-direction: column; justify-content: flex-start !important;
     width: 60%; height: 100%;
     position: relative;
     border-radius: 0 15px 15px 0;
-    transform: translateX(15px);
     overflow: hidden;
 }
 .circle-container span{
