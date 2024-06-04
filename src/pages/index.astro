@@ -7,8 +7,8 @@ import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION, SUBJECTS } from '../consts';
 import '/src/styles/main.css';
 
-import { Image } from 'astro:assets';
 import pinImg from '../../public/icons/pin.svg';
+import HeaderLink from '../components/HeaderLink.astro';
 
 const today = new Date();
 const posts = (await getCollection('study-notes')).sort(
@@ -44,7 +44,7 @@ const posts = (await getCollection('study-notes')).sort(
 					<div class="card center-flex">
 						<img src={pinImg.src} alt="pin" />
 						<div class="content">
-							<h2> <a href={`/blog/${post.slug}/`}> {post.data.title} </a> </h2>
+							<h2> <HeaderLink href={`/study-notes/${post.slug}/`}> {post.data.title} </HeaderLink> </h2>
 							<p> <FormattedDate date={post.data.pubDate} /> - <a href={`/author/${post.data.author}`}> {post.data.author} </a> </p>
 							<div class="tags">
 								{post.data.tags?.map((data) => <a class="tag" href={`/tag/${data}`}>#{data}</a>)}
