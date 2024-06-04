@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { SUBJECTS } from '../consts';
+import '/src/styles/main.css';
+import '/src/styles/page.css';
+import '/src/styles/md-styles.css';
+
+type Props = CollectionEntry<'blog'>['data'];
+const { title, description, pubDate, updatedDate, author, subject, tags } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body>
+
+		<Navbar />
+		<header>
+			<h1> {title} </h1>
+			<div class="info">
+				<FormattedDate date={pubDate} />
+				{updatedDate && (<span> Last updated on <FormattedDate date={updatedDate} /> </span>)}
+				- <a href={'/author/' + author}> {author} </a>
+			</div>
+			<div class="tags">
+				{tags?.map((data) => <a class="tag" href={'/tag/' + {data}}>#{data}</a>)}
+			</div>
+		</header>
+
+
+		<div class="container">
+			<main class="center-flex">
+	
+				<div class="page-content"> <slot /> </div>
+
+			</main>
+			<aside>
+				<h2>Subjects</h2>
+				<ul>
+					{SUBJECTS?.map((data) => <li> <a href={`/subject/${data}`}> {data} </a> </li>)}
+				</ul>
+			</aside>
+		</div>
+
+		
+		<Footer />
+
+	</body>
+</html>

@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Default from '../../layouts/default.astro';
+
+const posts = (await getCollection('study-notes')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+
+<Default
+	title="Some infos"
+	description="Lorem ipsum dolor sit amet"
+	pubDate={new Date('August 08 2021')}>
+	
+	{posts.map((post) => (
+		<div class="card center-flex">
+			<img src="/icons/pin.svg" alt="pin" />
+			<div class="content">
+				<h2> <a href={`/study-notes/${post.slug}/`}> {post.data.title} </a> </h2>
+				<p> <FormattedDate date={post.data.pubDate} /> - <a href={`/author/${post.data.author}`}> {post.data.author} </a> </p>
+				<div class="tags">
+					{post.data.tags?.map((data) => <a class="tag" href={`/tag/${data}`}>#{data}</a>)}
+				</div>
+			</div>
+			<div class="circle-container">
+				<span class="circle"></span>
+			</div>
+		</div>
+	))}
+
+</Default>

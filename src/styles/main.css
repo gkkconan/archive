@@ -1,0 +1,76 @@
+/*** CONTAINER ***/
+
+.container{display: flex; justify-content: space-between;}
+
+
+
+/*** ASIDE ***/
+
+aside{width: 25%; padding: 50px;}
+aside ul{margin: 15px;}
+aside ul li{margin: 10px 0; width: fit-content;}
+
+
+
+/*** MAIN ***/
+
+main{width: 75%; flex-direction: column; justify-content: flex-start !important; padding: 50px 0;}
+
+.card{
+    width: 75%;
+    max-width: 700px;
+    position: relative;
+    justify-content: space-between;
+    margin: 15px;
+    border: 1px solid #00000025;
+    border-radius: 15px;
+}
+
+.content{width: 100%; height: fit-content;}
+.card h2{font-size: 2em; margin: 15px;}
+.card p{margin: 5px 15px;}
+.card a{color: black;}
+.card h2 a::after, .card .tags a::after{display: none;}
+.tags{display: flex; flex-flow: row wrap; margin: 15px;}
+.tag{
+    margin: 5px 5px 5px 0;
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 0.8em;
+    background: #F4AEAE;
+    color: black;
+}
+
+.circle-container{
+    width: 60%; height: 100%;
+    position: relative;
+    border-radius: 0 15px 15px 0;
+    transform: translateX(15px);
+    overflow: hidden;
+}
+.circle-container span{
+    width: 200%; height: 200%;
+    display: inline-block;
+    position: absolute;
+    top: -50%;
+    background: var(--fire-opal);
+    border-radius: 100%;
+    transition: 1.5s;
+}
+.card img{position: absolute; top: -10px; left: -10px; width: 20px;}
+
+
+
+
+
+/*** RESPONSIVE ***/
+
+@media screen and (max-width: 1000px){
+    aside{width: 30%;}
+    main{width: 70%;}
+}
+
+@media screen and (max-width: 700px){
+    aside{display: none;}
+    main{width: 100%;}
+}

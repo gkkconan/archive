@@ -1,0 +1,32 @@
+/*** HEADER ***/
+
+header{padding: 25px 0 0 75px;}
+.info a::after{display: block;}
+
+
+
+/*** NAVBAR ***/
+
+nav{border-top: none; height: 60px;}
+
+
+
+/*** MAIN ***/
+
+aside{padding: 50px 50px 50px 25px;}
+
+
+
+/*** MAIN ***/
+
+main{margin: 0; padding: 25px 0;}
+
+.page-content{
+    max-width: calc(100% - 15%) !important;
+    margin: auto;
+    padding: 0 25px;
+    color: rgb(var(--gray-dark));
+}
+.page-content *{max-width: 100%;}
+
+.tags{margin: 15px 0;}

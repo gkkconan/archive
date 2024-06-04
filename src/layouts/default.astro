@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import '/src/styles/main.css';
+
+const today = new Date();
+type Props = CollectionEntry<'blog'>['data'];
+import { SITE_TITLE, SITE_DESCRIPTION, SUBJECTS } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+
+		<header>
+			<h1> <a href="/"> {SITE_TITLE} {(today.getFullYear())-1}/{today.getFullYear()} </a> </h1>
+		</header>
+
+		<Navbar />
+		
+
+		<div class="container">
+			<aside>
+				<h2>Subjects</h2>
+				<ul>
+					{SUBJECTS.map((data) => <li> <a href={`/subject/${data}`}> {data} </a> </li>)}
+				</ul>
+			</aside>
+		
+			<main class="center-flex">
+
+				<slot />
+	
+			</main>
+		</div>
+		
+		
+		<Footer />
+	</body>
+</html>

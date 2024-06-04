@@ -1,0 +1,22 @@
+---
+import HeaderLink from './HeaderLink.astro';
+---
+
+
+
+<nav class="center-flex">
+	<ul>
+		<li> <HeaderLink href="/"> Home </HeaderLink> </li>
+		<li> <HeaderLink href="/study-notes"> Study Notes </HeaderLink> </li>
+		<li> <HeaderLink href="/researches"> Researches </HeaderLink> </li>
+		<li> <HeaderLink href="/presentations"> Presentations </HeaderLink> </li>
+		<li> <HeaderLink href="/lessons"> Lessons </HeaderLink> </li>
+		<li> <HeaderLink href="/maps-and-diagrams"> Maps and Diagrams </HeaderLink> </li>
+		<li> <HeaderLink href="/exercises-and-reports"> Exercises and Reports </HeaderLink> </li>
+		<li> <HeaderLink href="/info"> Info </HeaderLink> </li>
+	</ul>
+	<div class="search-bar center-flex">
+		<input type="text" placeholder="Search" class="search-input">
+		<button> <img src="/icons/search.svg" class="search-icon" alt="search icon" /> </button>
+	</div>
+</nav>
