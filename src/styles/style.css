@@ -50,13 +50,7 @@ header a::after{display: none;}
 
 /*** NAVBAR ***/
 
-nav{
-    height: fit-content;
-    border-top: 2px solid #00000025;
-    border-bottom: 2px solid #00000025;
-    justify-content: space-between !important;
-    padding: 5px 50px;
-}
+nav{border-top: 2px solid #00000025; border-bottom: 2px solid #00000025; justify-content: space-between !important; padding: 5px 50px;}
 nav ul{display: flex; flex-wrap: wrap;}
 nav ul li{margin: 10px 15px}
 nav ul li a{position: relative;}
