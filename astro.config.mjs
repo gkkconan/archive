@@ -5,6 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://gkkconan.github.io',
+	site: 'https://gkkconan.github.io/archive/',
 	integrations: [mdx(), sitemap()],
 });
