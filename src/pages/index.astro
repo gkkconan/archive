@@ -7,6 +7,9 @@ import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION, SUBJECTS } from '../consts';
 import '/src/styles/main.css';
 
+import { Image } from 'astro:assets';
+import pinImg from '../../public/icons/pin.svg';
+
 const today = new Date();
 const posts = (await getCollection('study-notes')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -39,7 +42,7 @@ const posts = (await getCollection('study-notes')).sort(
 
 				{posts.map((post) => (
 					<div class="card center-flex">
-						<img src="/icons/pin.svg" alt="pin" />
+						<img src={pinImg.src} alt="pin" />
 						<div class="content">
 							<h2> <a href={`/blog/${post.slug}/`}> {post.data.title} </a> </h2>
 							<p> <FormattedDate date={post.data.pubDate} /> - <a href={`/author/${post.data.author}`}> {post.data.author} </a> </p>
