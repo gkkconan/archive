@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION, SUBJECTS } from '../consts';
-import './src/styles/main.css';
+import '/src/styles/main.css';
 
 const today = new Date();
 const posts = (await getCollection('study-notes')).sort(
